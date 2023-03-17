@@ -1,22 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { Link, generatePath } from 'react-router-dom';
-import { CountryList } from '../../components/CountryList/CountryList';
-import { ROUTE } from '../../router/routes';
+import React, { useEffect } from 'react';
+
+import { Title } from '../../components/Title/Title';
+import { fetchBooks } from '../../store/feautures/newBooksSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 
 export const MainPage = () => {
-  const [countries, setCountries] = useState<any[]>([]);
+  const dispatch = useAppDispatch();
+  const { isLoading, error, books } = useAppSelector((state) => state.books);
   useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
-      .then((res) => res.json())
-      .then(setCountries);
-  }, []);
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   return (
-    <main>
-      <h1>MainPage</h1>
-      <CountryList countries={countries} />
-    </main>
+    <div>
+      <Title value="New releases book" />
+
+      {isLoading && (
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      )}
+      {error && <p>Error</p>}
+
+      <div>
+        <ul>
+          {books.map((book) => {
+            return (
+              <li>
+                {book.title} {book.price}
+                {book.subtitle}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 };
-{
-  /*  */
-}

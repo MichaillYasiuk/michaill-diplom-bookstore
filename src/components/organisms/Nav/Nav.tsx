@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ROUTE } from '../../router/routes';
-import { CustomLink } from '../CustomLink/CustomLink';
+import { ROUTE } from '../../../routes/routes';
+import { CustomLink } from '../../molecules/CustomLink/CustomLink';
 
 export const Nav = () => {
   return (

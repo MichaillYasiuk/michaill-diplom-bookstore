@@ -9,9 +9,7 @@ export const DetailsPage = () => {
   };
   return (
     <div>
-      <button className="btn btn-primary" onClick={handleBack}>
-        back
-      </button>
+      <button onClick={handleBack}>back</button>
       <h1>{name}</h1>
     </div>
   );

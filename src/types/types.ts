@@ -1,4 +1,4 @@
-export interface IBook {
+export interface Book {
   title: string;
   subtitle: string;
   isbn13: string;
@@ -7,19 +7,19 @@ export interface IBook {
   url: string;
 }
 
-export interface IBookResponse {
+export interface BookResponse {
   error: string;
   total: string;
-  books: IBook[];
+  books: Book[];
 }
 
-export interface IBookResponseBySearch {
+export interface BookResponseBySearch {
   total: string;
   page: string;
-  books: IBook[];
+  books: Book[];
 }
 
-export interface IBookDetails {
+export interface BookDetails {
   error: string;
   title: string;
   subtitle: string;
@@ -34,10 +34,9 @@ export interface IBookDetails {
   price: string;
   image: string;
   url: string;
-  pdf?: { [key: string]: string };
 }
 
-export interface IBookCart {
+export interface BookCart {
   error: string;
   title: string;
   subtitle: string;
@@ -52,8 +51,12 @@ export interface IBookCart {
   price: string;
   image: string;
   url: string;
-  pdf?: { [key: string]: string };
+  pdf?: BookPDF;
   quantity: number;
+}
+
+export interface BookPDF {
+  [format: string]: string;
 }
 
 export interface SearchValue {

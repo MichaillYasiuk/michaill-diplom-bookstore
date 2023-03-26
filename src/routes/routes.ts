@@ -10,5 +10,5 @@ export enum ROUTE {
   SEARCH = 'search/',
   RESET_PASSWORD = 'reset',
   NOT_FOUND = 'not-found',
-  DETAILS_BOOK = 'DETAILS_BOOK',
+  DETAILS_BOOK = '/books/',
 }

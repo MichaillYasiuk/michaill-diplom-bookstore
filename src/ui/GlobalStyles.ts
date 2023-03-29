@@ -1,19 +1,15 @@
 import { createGlobalStyle } from "styled-components";
+import { Color } from "./colors";
+import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
-*{
-    box-sizing: border-box;
-    padding:0;
-    margin:0;
+
+
+${theme}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
     
-}
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-input {
-    border:none;
-}
-button {
-  font-family: inherit;
+    color: ${Color.PRIMARY};
 }
 `;

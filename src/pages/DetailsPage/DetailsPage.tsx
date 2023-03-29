@@ -1,5 +1,4 @@
-import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 
 export const DetailsPage = () => {
   const { name } = useParams();

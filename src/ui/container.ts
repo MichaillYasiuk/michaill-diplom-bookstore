@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Media } from './media';
+import styled from "styled-components";
+import { Media } from "./media";
 
 const Container = styled.div`
   max-width: 1120px;

@@ -1,19 +1,20 @@
-import React, { CSSProperties, useEffect } from 'react';
-import { BookCard } from '../../components/molecules/BookCard/BookCard';
-import Spinner from 'react-spinners/ClipLoader';
-import { Title } from '../../components/atoms/Title/Title';
-import { fetchBooks } from '../../store/feautures/newBooksSlice';
-import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
-import { StyledBooksContainer, StyledMainPage } from './styles';
-import { Color } from 'ui/colors';
+import { Title } from "components/atoms/Title/Title";
+import { BookCard } from "components/molecules/BookCard/BookCard";
+import { Subscription } from "components/molecules/Subscription/Subscription";
+import { CSSProperties, useEffect } from "react";
+import Spinner from "react-spinners/ClipLoader";
+import { fetchBooks } from "store/feautures/newBooksSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
+import { Color } from "ui/colors";
+import { StyledMainPage, StyledBooksContainer } from "./styles";
 
 const override: CSSProperties = {
-  margin: '200px auto',
+  margin: "200px auto",
 };
 
 export const MainPage = () => {
   const dispatch = useAppDispatch();
-  const { isLoading, error, books } = useAppSelector((state) => state.books);
+  const { isLoading, error, books } = useAppSelector(state => state.books);
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
@@ -23,12 +24,7 @@ export const MainPage = () => {
       <Title value="New releases book" />
 
       {isLoading && (
-        <Spinner
-          color={Color.Orange}
-          loading={isLoading}
-          cssOverride={override}
-          size={60}
-        />
+        <Spinner color={Color.ORANGE} loading={isLoading} cssOverride={override} size={60} />
       )}
       {error && <p>Error</p>}
 
@@ -38,6 +34,7 @@ export const MainPage = () => {
         })}
         ;
       </StyledBooksContainer>
+      <Subscription />
     </StyledMainPage>
   );
 };

@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
-import newBookReducer from './feautures/newBooksSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import newBookReducer from "./feautures/newBooksSlice";
 
-import searchReducer from './feautures/searchSlice';
+import searchReducer from "./feautures/searchSlice";
 
 export const store = configureStore({
   reducer: {

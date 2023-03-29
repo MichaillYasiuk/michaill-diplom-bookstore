@@ -1,4 +1,4 @@
-import { StyledTitle } from './styles';
+import { StyledTitle } from "./styles";
 
 interface TitleProps {
   value: string;

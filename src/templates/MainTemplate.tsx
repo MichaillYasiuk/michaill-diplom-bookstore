@@ -1,16 +1,17 @@
-import { Outlet } from 'react-router-dom';
-import { Footer } from '../components/organisms/Footer/Footer';
-import { Nav } from '../components/organisms/Nav/Nav';
+import { Footer } from "components/organisms/Footer/Footer";
+import { Nav } from "components/organisms/Nav/Nav";
+import { Outlet } from "react-router-dom";
+import { Container } from "ui/container";
 
 export const MainTemplate = () => {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <Container>
       <Nav />
       <div className="flex-grow-1">
         <Outlet />
       </div>
 
       <Footer />
-    </div>
+    </Container>
   );
 };

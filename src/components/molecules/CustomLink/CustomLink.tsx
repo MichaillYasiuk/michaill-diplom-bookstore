@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
-import { NavLink, useMatch } from 'react-router-dom';
-import { ROUTE } from '../../../routes/routes';
-import { StyledCustomLink } from './styles';
+import { ReactNode } from "react";
+import { useMatch, NavLink } from "react-router-dom";
+import { ROUTE } from "routes";
+import { StyledCustomLink } from "./styles";
 
 interface CustomLinkProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ export const CustomLink = ({ children, to }: CustomLinkProps) => {
   const match = useMatch(to);
   return (
     <StyledCustomLink>
-      <NavLink to={to} className={`${match && 'fw-bold'}`}>
+      <NavLink to={to} className={`${match && "fw-bold"}`}>
         {children}
       </NavLink>
     </StyledCustomLink>

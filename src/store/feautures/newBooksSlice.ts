@@ -1,7 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
-
-import { Book, BookResponse } from '../../types/types';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios, { AxiosError } from "axios";
+import { Book, BookResponse } from "types/types";
 
 interface BooksState {
   books: Book[];
@@ -15,26 +14,25 @@ const initialState: BooksState = {
   error: null,
 };
 
-const fetchBooks = createAsyncThunk<
-  BookResponse,
-  undefined,
-  { rejectValue: string }
->('books/fetchBooks', async (params, { rejectWithValue }) => {
-  try {
-    const { data } = await axios.get(`https://api.itbook.store/1.0/new`);
-    return data;
-  } catch (error) {
-    const { message } = error as AxiosError;
-    return rejectWithValue(message);
-  }
-});
+const fetchBooks = createAsyncThunk<BookResponse, undefined, { rejectValue: string }>(
+  "books/fetchBooks",
+  async (params, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get("https://api.itbook.store/1.0/new");
+      return data;
+    } catch (error) {
+      const { message } = error as AxiosError;
+      return rejectWithValue(message);
+    }
+  },
+);
 
 const newBooksSlice = createSlice({
-  name: 'books',
+  name: "books",
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchBooks.pending, (state) => {
+    builder.addCase(fetchBooks.pending, state => {
       state.isLoading = true;
       state.error = null;
     });

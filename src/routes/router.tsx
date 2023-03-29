@@ -1,5 +1,5 @@
-import { Registration } from 'components/molecules/Registration/Registration';
-import { RequareAuth } from 'components/molecules/RequareAuth/RequareAuth';
+import { Registration } from "components/molecules/Registration/Registration";
+import { RequareAuth } from "components/molecules/RequareAuth/RequareAuth";
 import {
   MainPage,
   SearchPage,
@@ -11,14 +11,10 @@ import {
   FavoritesPage,
   CartPage,
   AccountPage,
-} from 'pages';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom';
-import { MainTemplate } from 'templates/MainTemplate';
-import { ROUTE } from './routes';
+} from "pages";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { MainTemplate } from "templates/MainTemplate";
+import { ROUTE } from "./routes";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +36,6 @@ export const router = createBrowserRouter(
         <Route path={ROUTE.CART} element={<CartPage />} />
         <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
       </Route>
-    </Route>
-  )
+    </Route>,
+  ),
 );

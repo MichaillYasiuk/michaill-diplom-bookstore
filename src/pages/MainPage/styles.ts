@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledMainPage = styled.div`
   display: grid;
@@ -10,7 +10,6 @@ const StyledBooksContainer = styled.ul`
   grid-gap: 50px;
   justify-content: center;
   align-content: center;
-  margin-top: 50px;
 `;
 
 export { StyledMainPage, StyledBooksContainer };

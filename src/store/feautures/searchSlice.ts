@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
-import { Book, BookResponseBySearch } from 'types/types';
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios, { AxiosError } from "axios";
+import { Book, BookResponseBySearch } from "types/types";
 
 interface SearchBooksState {
   booksBySearch: Book[];
@@ -14,18 +14,18 @@ const initialState: SearchBooksState = {
   booksBySearch: [],
   isLoading: false,
   error: null,
-  debounceSearchValue: '',
-  total: '',
+  debounceSearchValue: "",
+  total: "",
 };
 
 const fetchBooksBySearch = createAsyncThunk<
   BookResponseBySearch,
   { searchValue: string },
   { rejectValue: string }
->('search/fetchBooksBySearch', async (params, { rejectWithValue }) => {
+>("search/fetchBooksBySearch", async (params, { rejectWithValue }) => {
   try {
     const { data } = await axios.get<BookResponseBySearch>(
-      `https://api.itbook.store/1.0/search/${params.searchValue} `
+      `https://api.itbook.store/1.0/search/${params.searchValue} `,
     );
     return data;
   } catch (error) {
@@ -35,7 +35,7 @@ const fetchBooksBySearch = createAsyncThunk<
 });
 
 const searchSlice = createSlice({
-  name: 'search',
+  name: "search",
   initialState,
   reducers: {
     getDebounceSearchValue(state, { payload }: PayloadAction<string>) {
@@ -43,11 +43,11 @@ const searchSlice = createSlice({
     },
 
     resetDebounceSearchValue(state) {
-      state.debounceSearchValue = '';
+      state.debounceSearchValue = "";
     },
   },
   extraReducers(builder) {
-    builder.addCase(fetchBooksBySearch.pending, (state) => {
+    builder.addCase(fetchBooksBySearch.pending, state => {
       state.isLoading = true;
       state.error = null;
     });
@@ -70,3 +70,4 @@ const searchSlice = createSlice({
 export default searchSlice.reducer;
 
 export { fetchBooksBySearch };
+export const { getDebounceSearchValue, resetDebounceSearchValue } = searchSlice.actions;

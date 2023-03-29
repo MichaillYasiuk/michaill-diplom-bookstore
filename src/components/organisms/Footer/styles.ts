@@ -8,7 +8,6 @@ const StyledFooter = styled.footer`
   align-items: center;
   padding-block: 20px;
   border-top: 1px solid ${Color.ORANGE};
-  background: ${Color.LIGHT};
   position: sticky;
   bottom: 0;
 

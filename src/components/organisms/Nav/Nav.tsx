@@ -1,7 +1,16 @@
 import { CustomLink } from "components/molecules/CustomLink/CustomLink";
+import { useState, useEffect } from "react";
 import { ROUTE } from "routes";
 
 export const Nav = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("theme", theme);
+  }, [theme]);
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
+  };
   return (
     <nav className="bg-light p-3   d-flex gap-5">
       <CustomLink to={ROUTE.MAIN}>Main</CustomLink>
@@ -14,6 +23,7 @@ export const Nav = () => {
       <CustomLink to={ROUTE.FAVORITES}>Favorites</CustomLink>
       <CustomLink to={ROUTE.CART}>Cart</CustomLink>
       <CustomLink to={ROUTE.ACCOUNT}>Account</CustomLink>
+      <button onClick={toggleTheme}>ToggleTheme</button>
     </nav>
   );
 };

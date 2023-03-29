@@ -15,7 +15,7 @@ export const SearchPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchBooksBySearch({ searchValue: "pa" }));
+    dispatch(fetchBooksBySearch({ searchValue: "it" }));
   }, [dispatch]);
   return (
     <div>

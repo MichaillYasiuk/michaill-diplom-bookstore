@@ -22,19 +22,19 @@ const H2 = css`
 `;
 
 const H3 = css`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 24px;
   line-height: 32px;
 `;
 
 const S1 = css`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   line-height: 24px;
 `;
 
 const BODY2 = css`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
 `;

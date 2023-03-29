@@ -7,10 +7,7 @@ export const MainTemplate = () => {
   return (
     <Container>
       <Nav />
-      <div className="flex-grow-1">
-        <Outlet />
-      </div>
-
+      <Outlet />
       <Footer />
     </Container>
   );

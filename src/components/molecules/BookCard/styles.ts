@@ -11,7 +11,7 @@ const Image = styled.img`
 `;
 const WrapperImage = styled.div`
   height: auto;
-  padding: 2px 60px;
+  padding: 1px 45px;
   background: ${Color.BLUE};
   ${Media.LG} {
     padding: 0 60px;
@@ -21,21 +21,32 @@ const WrapperImage = styled.div`
   }
 `;
 const Description = styled.div`
+  display: grid;
+  gap: 10px;
+  padding: 20px 5px 5px 5px;
   color: ${Color.SECONDARY};
   ${BODY2};
 `;
 
 const BookName = styled.h3`
-  ${H3}
+  ${H3};
+  color: ${Color.PRIMARY};
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const BookDescription = styled.p`
   color: ${Color.SECONDARY};
   ${BODY2};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Price = styled.h3`
   ${H3};
+  color: ${Color.PRIMARY};
 `;
 
 export { StyledBookCard, Image, BookName, BookDescription, Price, Description, WrapperImage };

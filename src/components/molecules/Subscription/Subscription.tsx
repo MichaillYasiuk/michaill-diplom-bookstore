@@ -2,7 +2,7 @@ import { SecondaryTitle } from "components/atoms/SecondaryTitle/SecondaryTitle";
 import { useForm } from "react-hook-form";
 import { Form } from "react-router-dom";
 import { useToggle } from "store/hooks/useToggle";
-import { StyledSubscription, ButtonForm } from "./styles";
+import { StyledSubscription, ButtonForm, Input, Text } from "./styles";
 
 export const Subscription = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -15,10 +15,12 @@ export const Subscription = () => {
   return (
     <StyledSubscription>
       <SecondaryTitle value="Subscribe to Newsletter" />
-      <p>Be the first to know about new IT books, upcoming releases, exclusive offers and more.</p>
+      <Text>
+        Be the first to know about new IT books, upcoming releases, exclusive offers and more.
+      </Text>
 
       <Form action="#" onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Your email" {...register("name")} />
+        <Input type="text" placeholder="Your email" {...register("name")} />
         <ButtonForm type="submit">Subscribe</ButtonForm>
       </Form>
       {isOpenNotification && <p>error</p>}

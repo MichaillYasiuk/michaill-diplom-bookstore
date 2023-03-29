@@ -21,7 +21,7 @@ export const MainPage = () => {
 
   return (
     <StyledMainPage>
-      <Title value="New releases book" />
+      <Title value="NEW RELEASES BOOK" />
 
       {isLoading && (
         <Spinner color={Color.ORANGE} loading={isLoading} cssOverride={override} size={60} />

@@ -1,15 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
-import { Nav } from "../Nav/Nav";
+import { Header } from "../Header/Header";
 
 export const MainTemplate = () => {
   return (
-    <div>
-      <Nav />
-      <div>
-        <Outlet />
-      </div>
+    <>
+      <Header />
+      <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };

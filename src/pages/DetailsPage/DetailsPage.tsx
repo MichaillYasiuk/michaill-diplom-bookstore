@@ -1,15 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
 
 export const DetailsPage = () => {
-  const { name } = useParams();
-  const navigate = useNavigate();
-  const handleBack = () => {
-    navigate(-1);
-  };
-  return (
-    <div>
-      <button onClick={handleBack}>back</button>
-      <h1>{name}</h1>
-    </div>
-  );
+  return <div>DetailsPage</div>;
 };

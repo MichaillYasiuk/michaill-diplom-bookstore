@@ -5,6 +5,7 @@ import { CSSProperties, useEffect } from "react";
 import Spinner from "react-spinners/ClipLoader";
 import { fetchBooks } from "store/feautures/newBooksSlice";
 import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
+import { getBooks } from "store/selectors/bookSelectors";
 import { Color } from "ui/colors";
 import { StyledMainPage, StyledBooksContainer } from "./styles";
 
@@ -14,14 +15,14 @@ const override: CSSProperties = {
 
 export const MainPage = () => {
   const dispatch = useAppDispatch();
-  const { isLoading, error, books } = useAppSelector(state => state.books);
+  const { isLoading, error, books } = useAppSelector(getBooks);
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
   return (
     <StyledMainPage>
-      <Title value="NEW RELEASES BOOK" />
+      <Title value="NEW REALESES" />
 
       {isLoading && (
         <Spinner color={Color.ORANGE} loading={isLoading} cssOverride={override} size={60} />

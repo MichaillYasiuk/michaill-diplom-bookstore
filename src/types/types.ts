@@ -34,6 +34,7 @@ export interface BookDetails {
   price: string;
   image: string;
   url: string;
+  pdf?: BookPDF;
 }
 
 export interface BookCart {

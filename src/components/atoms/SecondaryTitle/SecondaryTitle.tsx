@@ -1,10 +1,9 @@
-import React from "react";
 import { StyledSecondaryTitle } from "./styles";
 
-interface IProps {
+interface SecondaryTitleProps {
   value: string;
 }
 
-export const SecondaryTitle = ({ value }: IProps) => {
+export const SecondaryTitle = ({ value }: SecondaryTitleProps) => {
   return <StyledSecondaryTitle>{value}</StyledSecondaryTitle>;
 };

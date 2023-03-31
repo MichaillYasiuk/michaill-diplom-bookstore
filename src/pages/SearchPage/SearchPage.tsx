@@ -1,38 +1,48 @@
+import { Title } from "components/atoms/Title/Title";
 import { BookCard } from "components/molecules/BookCard/BookCard";
-import { StyledBooksContainer } from "pages/MainPage/styles";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { CSSProperties } from "react";
 import Spinner from "react-spinners/ClipLoader";
-import { fetchBooksBySearch } from "store/feautures/searchSlice";
-import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
-import { Color } from "ui/colors";
-import { Input } from "./styles";
+import { useAppSelector } from "store/hooks/hooks";
+import { getBooksBySearch } from "store/selectors/searchSelectors";
+import { Color } from "ui";
+import { StyledSearchPage, SearchBooks, Info, BooksSearchWrapper, Message } from "./styles";
+
+const override: CSSProperties = {
+  margin: "200px auto",
+};
 
 export const SearchPage = () => {
-  const { isLoading, booksBySearch, error } = useAppSelector(state => state.search);
+  const { booksBySearch, isLoading, error, debounceSearchValue, total } = useAppSelector(
+    getBooksBySearch,
+  );
 
-  const { register } = useForm();
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchBooksBySearch({ searchValue: "it" }));
-  }, [dispatch]);
   return (
-    <div>
-      <form>
-        <Input type="text" {...register("searchValue")} />
-      </form>
+    <StyledSearchPage>
+      <SearchBooks>
+        <Title value={`"${debounceSearchValue}" search results`} />
 
-      {isLoading && <Spinner color={Color.ORANGE} loading={isLoading} size={60} />}
-      {error && <span>{error}</span>}
-      {booksBySearch && booksBySearch.length > 0 && (
-        <StyledBooksContainer>
-          {booksBySearch.map((book, index) => {
-            return <BookCard book={book} index={index} key={book.isbn13} />;
-          })}
-          ;
-        </StyledBooksContainer>
-      )}
-    </div>
+        {isLoading && (
+          <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
+        )}
+
+        {error && <p>Error</p>}
+
+        {!isLoading && !error && (
+          <>
+            {<Info>Found {total} books</Info>}
+
+            {booksBySearch.length !== 0 ? (
+              <BooksSearchWrapper>
+                {booksBySearch.map((book, index) => {
+                  return <BookCard book={book} key={book.isbn13} index={index} />;
+                })}
+              </BooksSearchWrapper>
+            ) : (
+              <Message>No results found</Message>
+            )}
+          </>
+        )}
+      </SearchBooks>
+    </StyledSearchPage>
   );
 };

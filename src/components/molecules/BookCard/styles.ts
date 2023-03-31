@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, BODY2, H3 } from "ui";
 
-const StyledBookCard = styled.li`
+const StyledBookCard = styled(motion.li)`
   display: grid;
   box-shadow: 1px 1px 15px ${Color.GRAY};
 `;
@@ -26,6 +27,7 @@ const Description = styled.div`
   padding: 20px 5px 5px 5px;
   color: ${Color.SECONDARY};
   ${BODY2};
+  border-bottom: 1px solid ${Color.SECONDARY};
 `;
 
 const BookName = styled.h3`

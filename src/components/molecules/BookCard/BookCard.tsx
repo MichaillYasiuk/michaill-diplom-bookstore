@@ -27,7 +27,7 @@ export const BookCard = ({ book }: BookCardProps) => {
       whileHover={{ boxShadow: `1px 1px 15px ${Color.SECONDARY}` }}
       initial="hidden"
     >
-      <Link to={`${ROUTE.DETAILS_BOOK}${isbn13}`}>
+      <Link to={`${ROUTE.DETAILS}${isbn13}`}>
         <WrapperImage>
           <Image src={image} alt={title} />
         </WrapperImage>

@@ -23,6 +23,7 @@ import { useDebounce } from "store/hooks/useDebounce";
 import { useInput } from "store/hooks/useInput";
 import { getBooksBySearch } from "store/selectors/searchSelectors";
 import { useWindowSize } from "store/hooks/useWindowSize";
+import { AnimatePresence } from "framer-motion";
 
 interface SearchHeaderProps {
   handleBurger?: () => void;
@@ -86,44 +87,45 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
           <SearchIcon width="20" fill={Color.SECONDARY} onClick={handleSearchPage} />
         </SearchButton>
       </Search>
+      <AnimatePresence>
+        {isOpen && (
+          <SearchListWrapper
+            animate={{ height: "50vh" }}
+            initial={{ height: "0" }}
+            exit={{ height: "0" }}
+            transition={{ duration: 0.4 }}
+          >
+            {isLoading && (
+              <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
+            )}
+            {error && <p>Error</p>}
+            {booksBySearch.length > 0 && (
+              <SearchList>
+                {booksBySearch.map((book, index) => {
+                  return (
+                    <Link to={`${ROUTE.DETAILS}${book.isbn13}`} key={book.isbn13}>
+                      <SearchCard whileTap={{ scale: 1.1 }} initial="hidden" custom={index}>
+                        <WrapperImage>
+                          <Image src={book.image} alt={book.title} />
+                        </WrapperImage>
+                        <Title>{book.title}</Title>
+                      </SearchCard>
+                    </Link>
+                  );
+                })}
+              </SearchList>
+            )}
 
-      {isOpen && (
-        <SearchListWrapper
-          animate={{ height: "50vh" }}
-          initial={{ height: "0" }}
-          exit={{ height: "0" }}
-          transition={{ duration: 0.4 }}
-        >
-          {isLoading && (
-            <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
-          )}
-          {error && <p>Error</p>}
-          {booksBySearch.length > 0 && (
-            <SearchList>
-              {booksBySearch.map((book, index) => {
-                return (
-                  <Link to={`${ROUTE.DETAILS_BOOK}${book.isbn13}`} key={book.isbn13}>
-                    <SearchCard whileTap={{ scale: 1.1 }} initial="hidden" custom={index}>
-                      <WrapperImage>
-                        <Image src={book.image} alt={book.title} />
-                      </WrapperImage>
-                      <Title>{book.title}</Title>
-                    </SearchCard>
-                  </Link>
-                );
-              })}
-            </SearchList>
-          )}
-
-          {booksBySearch.length === 0 && (
-            <>
-              <Message>
-                No results found for <SearchError>{debounceSearchValue}</SearchError>
-              </Message>
-            </>
-          )}
-        </SearchListWrapper>
-      )}
+            {booksBySearch.length === 0 && (
+              <>
+                <Message>
+                  No results found for <SearchError>{debounceSearchValue}</SearchError>
+                </Message>
+              </>
+            )}
+          </SearchListWrapper>
+        )}
+      </AnimatePresence>
     </>
   );
 };

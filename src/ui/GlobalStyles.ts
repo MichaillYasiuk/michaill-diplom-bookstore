@@ -9,6 +9,12 @@ ${theme}
     margin:0;
     
 }
+ul{
+    list-style:none;
+}
+a{
+text-decoration:none;
+}
 body{
     font-family: 'Tillana', sans-serif;
      }

@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media } from "ui";
 
-const WrapperHeader = styled.div``;
-
 const StyledHeader = styled.header`
   position: relative;
   display: grid;
@@ -113,6 +111,5 @@ export {
   CartButton,
   UserButton,
   ButtonBurger,
-  WrapperHeader,
   Logo,
 };

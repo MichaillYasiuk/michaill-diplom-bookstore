@@ -1,4 +1,4 @@
-import { StyledError } from './styles';
+import { StyledError } from "./styles";
 
 interface ErrorProps {
   value: string;

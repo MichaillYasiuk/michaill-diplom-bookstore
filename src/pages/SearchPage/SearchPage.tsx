@@ -1,11 +1,11 @@
-import { Title } from "components/atoms/Title/Title";
-import { BookCard } from "components/molecules/BookCard/BookCard";
+import { BookCard, Error, Title } from "components";
 import { CSSProperties } from "react";
 import Spinner from "react-spinners/ClipLoader";
 import { useAppSelector } from "store/hooks/hooks";
 import { getBooksBySearch } from "store/selectors/searchSelectors";
 import { Color } from "ui";
 import { StyledSearchPage, SearchBooks, Info, BooksSearchWrapper, Message } from "./styles";
+import { StyledError } from "pages/MainPage/styles";
 
 const override: CSSProperties = {
   margin: "200px auto",
@@ -25,7 +25,11 @@ export const SearchPage = () => {
           <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
         )}
 
-        {error && <p>Error</p>}
+        {error && (
+          <StyledError>
+            <Error value={error} />
+          </StyledError>
+        )}
 
         {!isLoading && !error && (
           <>

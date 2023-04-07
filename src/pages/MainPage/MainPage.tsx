@@ -7,7 +7,8 @@ import { fetchBooks } from "store/feautures/newBooksSlice";
 import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
 import { getBooks } from "store/selectors/bookSelectors";
 import { Color } from "ui/colors";
-import { StyledMainPage, StyledBooksContainer } from "./styles";
+import { Error } from "../../components/atoms/Error/Error";
+import { StyledMainPage, StyledBooksContainer, StyledError } from "./styles";
 
 const override: CSSProperties = {
   margin: "200px auto",
@@ -25,9 +26,13 @@ export const MainPage = () => {
       <Title value="NEW REALESES" />
 
       {isLoading && (
-        <Spinner color={Color.ORANGE} loading={isLoading} cssOverride={override} size={60} />
+        <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
       )}
-      {error && <p>Error</p>}
+      {error && (
+        <StyledError>
+          <Error value={error} />
+        </StyledError>
+      )}
 
       <StyledBooksContainer>
         {books.map((book, index) => {

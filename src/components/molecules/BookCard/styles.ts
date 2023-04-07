@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Color, Media, BODY2, H3 } from "ui";
+import { Media, BODY2, H3, Color } from "ui";
 
 const StyledBookCard = styled(motion.li)`
   display: grid;
@@ -24,7 +24,7 @@ const WrapperImage = styled.div`
 const Description = styled.div`
   display: grid;
   gap: 10px;
-  padding: 20px 5px 5px 5px;
+  padding: 20px 10px 5px 10px;
   color: ${Color.SECONDARY};
   ${BODY2};
   border-bottom: 1px solid ${Color.SECONDARY};

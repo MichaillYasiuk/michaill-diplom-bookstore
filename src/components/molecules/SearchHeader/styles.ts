@@ -21,9 +21,11 @@ const Search = styled(motion.div)`
 `;
 
 const SearchInput = styled.input`
-  min-width: 500px;
+  min-width: 480px;
   border: none;
   outline: none;
+  color: ${Color.WHITE};
+  background: ${Color.LIGHT};
 
   :focus {
     color: ${Color.PRIMARY};

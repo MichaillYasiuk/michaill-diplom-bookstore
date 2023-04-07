@@ -1,3 +1,5 @@
+import { SignUpForm } from "components/molecules/SignUpForm/SignUpForm";
+
 export const SignUpPage = () => {
-  return <div>SignUpPage</div>;
+  return <SignUpForm />;
 };

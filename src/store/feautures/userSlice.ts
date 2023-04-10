@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { auth } from "../../firebase";
 import {
   createUserWithEmailAndPassword,
-  getAuth,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
@@ -38,7 +38,6 @@ export const fetchSignUpUser = createAsyncThunk<
   { rejectValue: FirebaseError }
 >("user/fetchSignUpUser", async ({ email, password }, { rejectWithValue }) => {
   try {
-    const auth = getAuth();
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const userEmail = userCredential.user.email as string;
     const creationTime = userCredential.user.metadata.creationTime as string;
@@ -58,7 +57,6 @@ export const fetchSignInUser = createAsyncThunk<
   { rejectValue: FirebaseError }
 >("user/fetchSignInUser", async ({ email, password }, { rejectWithValue }) => {
   try {
-    const auth = getAuth();
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const userEmail = userCredential.user.email as string;
     const creationTime = userCredential.user.metadata.creationTime as string;
@@ -76,7 +74,6 @@ export const fetchSignOut = createAsyncThunk<void, undefined, { rejectValue: Fir
   "user/fetchSignOut",
   async (params, { rejectWithValue }) => {
     try {
-      const auth = getAuth();
       await signOut(auth);
     } catch (error) {
       const firebaseError = error as { code: FirebaseErrorCode };
@@ -92,7 +89,6 @@ export const fetchResetPassword = createAsyncThunk<
   { rejectValue: FirebaseError }
 >("user/fetchResetPassword", async ({ email }, { rejectWithValue }) => {
   try {
-    const auth = getAuth();
     await sendPasswordResetEmail(auth, email);
     return email;
   } catch (error) {
@@ -105,7 +101,6 @@ export const fetchUpdateEmail = createAsyncThunk<void, string, { rejectValue: Fi
   "user/fetchUpdateEmail",
   async (newEmail, { rejectWithValue }) => {
     try {
-      const auth = getAuth();
       const user = auth.currentUser;
       user && (await updateEmail(user, newEmail));
     } catch (error) {
@@ -121,7 +116,6 @@ export const fetchUpdateEmailAndPassword = createAsyncThunk<
   { rejectValue: FirebaseError }
 >("user/fetchUpdateEmailAndPassword", async ({ newEmail, newPassword }, { rejectWithValue }) => {
   try {
-    const auth = getAuth();
     const user = auth.currentUser;
     user && (await updateEmail(user, newEmail));
     user && (await updatePassword(user, newPassword));

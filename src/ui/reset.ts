@@ -1,14 +1,12 @@
 import { css } from "styled-components";
 
 export const resetCSS = css`
-  /* Box sizing rules */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  /* Remove default margin */
   body,
   h1,
   h2,
@@ -22,7 +20,6 @@ export const resetCSS = css`
     margin: 0;
   }
 
-  /* Remove list styles on ul, ol elements*/
   ul,
   ol {
     list-style: none;
@@ -30,32 +27,27 @@ export const resetCSS = css`
     padding: 0;
   }
 
-  /* Set core root defaults */
   html:focus-within {
     scroll-behavior: smooth;
   }
 
-  /* Set core body defaults */
   body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
   }
 
-  /* A elements that don't have a class get default styles */
   a:not([class]) {
     text-decoration: none;
     color: inherit;
   }
 
-  /* Make images easier to work with */
   img,
   picture {
     max-width: 100%;
     display: block;
   }
 
-  /* Inherit fonts for inputs and buttons */
   input,
   button,
   textarea,
@@ -63,7 +55,6 @@ export const resetCSS = css`
     padding: 0;
   }
 
-  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
       scroll-behavior: auto;

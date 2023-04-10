@@ -83,7 +83,7 @@ export const AccountPage = () => {
 
   useEffect(() => {
     error && dispatch(resetError());
-  }, [dispatch, error]);
+  }, [dispatch]);
 
   const createdTime = new Date(creationTime);
 

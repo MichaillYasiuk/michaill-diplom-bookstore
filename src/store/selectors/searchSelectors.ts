@@ -1,3 +1,3 @@
 import { RootState } from "../store";
 
-export const getBooksBySearch = (state: RootState) => state.persistedReducer.search;
+export const getBooksBySearch = (state: RootState) => state.search;

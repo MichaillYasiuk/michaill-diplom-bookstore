@@ -42,7 +42,7 @@ export const SignUpForm = () => {
 
   useEffect(() => {
     error && dispatch(resetError());
-  }, [dispatch, error]);
+  }, [dispatch]);
 
   return (
     <StyledSignUpForm action="#" onSubmit={handleSubmit(onSubmit)}>

@@ -74,7 +74,7 @@ export const fetchSignInUser = createAsyncThunk<
 
 export const fetchSignOut = createAsyncThunk<void, undefined, { rejectValue: FirebaseError }>(
   "user/fetchSignOut",
-  async (_, { rejectWithValue }) => {
+  async (params, { rejectWithValue }) => {
     try {
       const auth = getAuth();
       await signOut(auth);

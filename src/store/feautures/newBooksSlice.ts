@@ -16,7 +16,7 @@ const initialState: BooksState = {
 
 const fetchBooks = createAsyncThunk<BookResponse, undefined, { rejectValue: string }>(
   "books/fetchBooks",
-  async (params, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("https://api.itbook.store/1.0/new");
       return data;

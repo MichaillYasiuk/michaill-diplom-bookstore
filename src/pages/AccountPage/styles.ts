@@ -140,7 +140,7 @@ const ButtonCancel = styled.button`
   }
 `;
 
-const Info = styled.div`
+const Info = styled(motion.div)`
   position: absolute;
   top: 25px;
   right: 0;

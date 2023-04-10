@@ -6,11 +6,11 @@ import { SearchPage } from "./SearchPage/SearchPage";
 import { SignInPage } from "./SignInPage/SignInPage";
 import { SignUpPage } from "./SignUpPage/SignUpPage";
 import { ResetPasswordPage } from "./ResetPasswordPage/ResetPasswordPage";
-import { DetailsPage } from "./DetailsPage/DetailsPage";
+import { DetailsBookPage } from "./DetailsBookPage/DetailsBookPage";
 import { MainPage } from "./MainPage/MainPage";
 
 export {
-  DetailsPage,
+  DetailsBookPage,
   AccountPage,
   CartPage,
   FavoritesPage,

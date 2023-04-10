@@ -2,13 +2,19 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media } from "ui";
 
+const WrapperHeader = styled.div`
+  z-index: 2;
+  background: ${Color.LIGHT};
+  position: sticky;
+  top: 0;
+`;
+
 const StyledHeader = styled.header`
   position: relative;
   display: grid;
   grid-template-columns: 20% 55% 5% 20%;
   align-items: center;
   padding-block: 20px;
-  border-bottom: 1px solid ${Color.SECONDARY};
 
   ${Media.LG} {
     grid-template-columns: none;
@@ -38,6 +44,7 @@ const ButtonTheme = styled(motion.button)`
 const Logo = styled.p`
   font-size: 36px;
   font-weight: 500;
+  color: ${Color.PRIMARY};
 `;
 
 const List = styled.ul`
@@ -72,6 +79,9 @@ const CartButton = styled(motion.button)`
   background: none;
   border: none;
   cursor: pointer;
+  ${Media.LG} {
+    display: none;
+  }
 `;
 
 const UserButton = styled(motion.button)`
@@ -112,4 +122,5 @@ export {
   UserButton,
   ButtonBurger,
   Logo,
+  WrapperHeader,
 };

@@ -2,6 +2,16 @@ import styled from "styled-components";
 import { Color } from "ui/colors";
 import { Media } from "ui/media";
 
+const WrapperFooter = styled.div`
+  background: ${Color.LIGHT};
+  position: sticky;
+  bottom: 0;
+
+  ${Media.LG} {
+    position: static;
+  }
+`;
+
 const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -30,4 +40,4 @@ const FooterDescription = styled.p`
   }
 `;
 
-export { StyledFooter, FooterDescription };
+export { StyledFooter, FooterDescription, WrapperFooter };

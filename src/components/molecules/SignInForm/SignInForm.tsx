@@ -40,8 +40,8 @@ export const SignInForm = () => {
   };
 
   useEffect(() => {
-    dispatch(resetError());
-  }, [dispatch]);
+    error && dispatch(resetError());
+  }, [error, dispatch]);
 
   return (
     <StyledSignInForm action="#" onSubmit={handleSubmit(onSubmit)}>

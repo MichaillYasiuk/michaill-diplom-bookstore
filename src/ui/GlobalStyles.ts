@@ -1,21 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./theme";
+import { Color } from "ui";
+import { resetCSS } from "./reset";
 
 export const GlobalStyles = createGlobalStyle`
 ${theme}
-*{
-    box-sizing: border-box;
-    padding:0;
-    margin:0;
-    
-}
-ul{
-    list-style:none;
-}
-a{
-text-decoration:none;
-}
+${resetCSS}
 body{
     font-family: 'Tillana', sans-serif;
+    background: ${Color.WHITE};
+    color: ${Color.PRIMARY};
      }
 `;

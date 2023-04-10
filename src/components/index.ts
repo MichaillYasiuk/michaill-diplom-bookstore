@@ -18,7 +18,7 @@ import { DetailsBook } from "./organisms/DetailBook/DetailsBook";
 import { SecondaryTitle } from "./atoms/SecondaryTitle/SecondaryTitle";
 import { Subscription } from "./molecules/Subscription/Subscription";
 import { Portal } from "./molecules/Portal/Portal";
-
+import { SimilarBooks } from "./organisms/SimilarBooks/SimilarBooks";
 export {
   HeaderCustomLink,
   RegistrationLink,
@@ -40,4 +40,5 @@ export {
   SecondaryTitle,
   Subscription,
   Portal,
+  SimilarBooks,
 };

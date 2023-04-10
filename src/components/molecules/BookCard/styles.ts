@@ -5,15 +5,14 @@ import { Media, BODY2, H3, Color } from "ui";
 const StyledBookCard = styled(motion.li)`
   display: grid;
   box-shadow: 1px 1px 15px ${Color.GRAY};
+  border-radius: 15px;
 `;
 
-const Image = styled.img`
-  width: 100%;
-`;
 const WrapperImage = styled.div`
   height: auto;
   padding: 1px 45px;
   background: ${Color.BLUE};
+  border-radius: 15px;
   ${Media.LG} {
     padding: 0 60px;
   }
@@ -21,13 +20,15 @@ const WrapperImage = styled.div`
     padding: 0 50px;
   }
 `;
+const Image = styled.img`
+  width: 100%;
+`;
 const Description = styled.div`
   display: grid;
   gap: 10px;
   padding: 20px 10px 5px 10px;
   color: ${Color.SECONDARY};
   ${BODY2};
-  border-bottom: 1px solid ${Color.SECONDARY};
 `;
 
 const BookName = styled.h3`

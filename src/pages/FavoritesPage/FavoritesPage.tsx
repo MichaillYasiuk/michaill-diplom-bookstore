@@ -1,7 +1,11 @@
+import { FavoritesBooks, FreeBooks } from "components";
+import { StyledFavoritesPage } from "./styles";
+
 export const FavoritesPage = () => {
   return (
-    <div className="bg-success">
-      <h1>FavoritesPage</h1>
-    </div>
+    <StyledFavoritesPage>
+      <FavoritesBooks />
+      <FreeBooks />
+    </StyledFavoritesPage>
   );
 };

@@ -16,14 +16,20 @@ import {
   SearchListWrapper,
   Message,
   SearchError,
+  StyledError,
 } from "./styles";
-import { getDebounceSearchValue, fetchBooksBySearch } from "store/feautures/searchSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { useDebounce } from "store/hooks/useDebounce";
-import { useInput } from "store/hooks/useInput";
-import { getBooksBySearch } from "store/selectors/searchSelectors";
-import { useWindowSize } from "store/hooks/useWindowSize";
+import { Error } from "components";
 import { AnimatePresence } from "framer-motion";
+import {
+  fetchBooksBySearch,
+  getBooksBySearch,
+  getDebounceSearchValue,
+  useAppDispatch,
+  useAppSelector,
+  useDebounce,
+  useInput,
+  useWindowSize,
+} from "store";
 
 interface SearchHeaderProps {
   handleBurger?: () => void;
@@ -76,7 +82,7 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
   }, [currentPageMain, currentPageSearch, setValue]);
 
   const handleSearchPage = () => {
-    !currentPageFavorites && !currentPageCart && navigate(`${ROUTE.SEARCH}`);
+    !currentPageFavorites && !currentPageCart && navigate(`${ROUTE.SEARCH}gh`);
   };
 
   return (
@@ -90,7 +96,7 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
       <AnimatePresence>
         {isOpen && (
           <SearchListWrapper
-            animate={{ height: "50vh" }}
+            animate={{ height: "35vh" }}
             initial={{ height: "0" }}
             exit={{ height: "0" }}
             transition={{ duration: 0.4 }}
@@ -98,7 +104,11 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
             {isLoading && (
               <Spinner color={Color.PRIMARY} loading={isLoading} cssOverride={override} size={60} />
             )}
-            {error && <p>Error</p>}
+            {error && (
+              <StyledError>
+                <Error value={error} />
+              </StyledError>
+            )}
             {booksBySearch.length > 0 && (
               <SearchList>
                 {booksBySearch.map((book, index) => {

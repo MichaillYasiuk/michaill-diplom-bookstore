@@ -1,8 +1,8 @@
-import { SecondaryTitle } from "components/atoms/SecondaryTitle/SecondaryTitle";
 import { useForm } from "react-hook-form";
 import { Form } from "react-router-dom";
-import { useToggle } from "store/hooks/useToggle";
 import { StyledSubscription, ButtonForm, Input, Text } from "./styles";
+import { useToggle } from "store";
+import { SecondaryTitle } from "components";
 
 export const Subscription = () => {
   const { register, handleSubmit, reset } = useForm();

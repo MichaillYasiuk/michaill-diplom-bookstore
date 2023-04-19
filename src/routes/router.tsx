@@ -1,4 +1,4 @@
-import { RequareAuth } from "components/molecules/RequareAuth/RequareAuth";
+import { MainTemplate, Registration, RequareAuth } from "components";
 import {
   MainPage,
   SearchPage,
@@ -12,16 +12,14 @@ import {
   AccountPage,
 } from "pages";
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { MainTemplate } from "templates/MainTemplate";
 import { ROUTE } from "./routes";
-import { Registration } from "components/organisms/Registration/Registration";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path={ROUTE.MAIN} element={<MainTemplate />}>
       <Route index element={<MainPage />} />
-      <Route path={ROUTE.SEARCH} element={<SearchPage />} />
-      <Route path={ROUTE.DETAILS} element={<DetailsBookPage />} />
+      <Route path={`${ROUTE.SEARCH}:page`} element={<SearchPage />} />
+      <Route path={`${ROUTE.DETAILS}:id`} element={<DetailsBookPage />} />
 
       <Route element={<Registration />}>
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />

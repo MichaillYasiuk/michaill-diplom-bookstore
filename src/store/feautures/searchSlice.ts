@@ -25,7 +25,7 @@ const fetchBooksBySearch = createAsyncThunk<
 >("search/fetchBooksBySearch", async (params, { rejectWithValue }) => {
   try {
     const { data } = await axios.get<BookResponseBySearch>(
-      `https://api.itbook.store/1.0/search/${params.query} `,
+      `https://api.itbook.store/1.0/search/${params.query}/${params.page} `,
     );
     return data;
   } catch (error) {

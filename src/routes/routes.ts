@@ -1,7 +1,7 @@
 export enum ROUTE {
   MAIN = "/",
-  SEARCH = "search/:page",
-  DETAILS = "/books/:id",
+  SEARCH = "search/",
+  DETAILS = "/books/",
   FAVORITES = "favorites",
   RESET_PASSWORD = "reset",
   NOT_FOUND = "*",

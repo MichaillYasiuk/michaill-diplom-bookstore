@@ -1,4 +1,4 @@
-import { SignUpForm } from "components/molecules/SignUpForm/SignUpForm";
+import { SignUpForm } from "components";
 
 export const SignUpPage = () => {
   return <SignUpForm />;

@@ -55,7 +55,6 @@ export interface BookCart {
   pdf?: BookPDF;
   quantity: number;
 }
-
 export interface BookPDF {
   [format: string]: string;
 }

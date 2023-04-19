@@ -1,4 +1,4 @@
-import { SignInForm } from "components/molecules/SignInForm/SignInForm";
+import { SignInForm } from "components";
 
 export const SignInPage = () => {
   return <SignInForm />;

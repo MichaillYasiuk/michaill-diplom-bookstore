@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
-import { useWindowSize } from "store/hooks/useWindowSize";
+import {
+  changeTheme,
+  getFavoritesBooks,
+  getUserInfo,
+  useAppDispatch,
+  useAppSelector,
+  useToggle,
+  useWindowSize,
+} from "store";
 import { Breakpoint, Color, Container } from "ui";
 import {
   ButtonLogo,
@@ -16,12 +24,16 @@ import {
   StyledHeader,
 } from "./styles";
 import { AnimatePresence } from "framer-motion";
-import { useToggle } from "store/hooks/useToggle";
 import { BurgerMenu, HeaderCustomLink, SearchHeader } from "components";
-import { BurgerIcon, CartIcon, FavoritesIcon, MoonIcon, SunIcon, UserIcon } from "assets";
-import { changeTheme } from "store/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { getUserInfo } from "store/selectors/userSelectors";
+import {
+  BurgerIcon,
+  CartIcon,
+  FavoritesActiveIcon,
+  FavoritesIcon,
+  MoonIcon,
+  SunIcon,
+  UserIcon,
+} from "assets";
 
 export const Header = () => {
   const { width = 0 } = useWindowSize();
@@ -29,6 +41,7 @@ export const Header = () => {
   const { theme } = useAppSelector(getUserInfo);
   const [isDark, toggleIsInstallDark] = useToggle();
   const [isOpen, toggleIsOpen] = useToggle();
+  const { favoritesBooks } = useAppSelector(getFavoritesBooks);
   const setAttributeTheme = (themeValue: "light" | "dark") => {
     document.documentElement.setAttribute("theme", `${themeValue}`);
   };
@@ -69,15 +82,19 @@ export const Header = () => {
           </ButtonTheme>
 
           <List>
-            <Item>
+            <Item key="1">
               <HeaderCustomLink to={ROUTE.FAVORITES}>
                 <FavoritesButton whileHover={{ scale: 1.1 }}>
-                  <FavoritesIcon width="26" stroke={Color.PRIMARY} />
+                  {favoritesBooks.length > 0 ? (
+                    <FavoritesActiveIcon width="24" stroke={Color.PRIMARY} />
+                  ) : (
+                    <FavoritesIcon width="24" stroke={Color.PRIMARY} />
+                  )}
                 </FavoritesButton>
               </HeaderCustomLink>
             </Item>
 
-            <Item>
+            <Item key="2">
               <HeaderCustomLink to={ROUTE.CART}>
                 <CartButton whileHover={{ scale: 1.1 }}>
                   <CartIcon width="26" stroke={Color.PRIMARY} />
@@ -85,7 +102,7 @@ export const Header = () => {
               </HeaderCustomLink>
             </Item>
 
-            <Item>
+            <Item key="3">
               <HeaderCustomLink to={ROUTE.ACCOUNT}>
                 <UserButton whileHover={{ scale: 1.1 }}>
                   <UserIcon width="26" stroke={Color.PRIMARY} />

@@ -17,7 +17,6 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding-block: 20px;
-  border-top: 1px solid ${Color.ORANGE};
   position: sticky;
   bottom: 0;
 

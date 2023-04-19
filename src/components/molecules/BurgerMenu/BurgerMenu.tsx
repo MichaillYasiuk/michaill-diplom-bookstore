@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import { MouseEvent } from "react";
 import { ROUTE } from "routes";
 import { BurgerHeader, Description, StyledBurgerMenu, WrapperContent, Error } from "./styles";
-import { Button } from "components/atoms/Button/Button";
-import { fetchSignOut } from "store/feautures/userSlice";
-import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
-import { getUserInfo } from "store/selectors/userSelectors";
-import { SearchHeader } from "../SearchHeader/SearchHeader";
-import { Close } from "components/atoms/Close/Close";
+import { useAppSelector, getUserInfo, useAppDispatch, fetchSignOut } from "store";
+import { Button, Close, SearchHeader } from "components";
 
 interface BurgerProps {
   handleBurger: () => void;

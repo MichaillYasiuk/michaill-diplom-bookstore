@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
 import { Book } from "types/types";
-import { Color } from "ui";
-
 import {
   StyledBookCard,
   Image,
@@ -12,13 +10,14 @@ import {
   WrapperImage,
   Price,
 } from "./styles";
+import { Color } from "ui";
 
 interface BookCardProps {
   book: Book;
   index: number;
 }
 
-export const BookCard = ({ book }: BookCardProps) => {
+export const BookCard = ({ book, index }: BookCardProps) => {
   const { isbn13, title, subtitle, image, price } = book;
 
   return (
@@ -26,6 +25,7 @@ export const BookCard = ({ book }: BookCardProps) => {
       whileTap={{ scale: 1.1 }}
       whileHover={{ boxShadow: `1px 1px 15px ${Color.SECONDARY}` }}
       initial="hidden"
+      custom={index}
     >
       <Link to={`${ROUTE.DETAILS}${isbn13}`}>
         <WrapperImage>

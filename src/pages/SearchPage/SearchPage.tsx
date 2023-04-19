@@ -1,11 +1,10 @@
 import { BookCard, Error, Title } from "components";
+import { StyledError } from "pages/DetailsBookPage/styles";
 import { CSSProperties } from "react";
 import Spinner from "react-spinners/ClipLoader";
-import { useAppSelector } from "store/hooks/hooks";
-import { getBooksBySearch } from "store/selectors/searchSelectors";
+import { useAppSelector, getBooksBySearch } from "store";
 import { Color } from "ui";
 import { StyledSearchPage, SearchBooks, Info, BooksSearchWrapper, Message } from "./styles";
-import { StyledError } from "pages/MainPage/styles";
 
 const override: CSSProperties = {
   margin: "200px auto",

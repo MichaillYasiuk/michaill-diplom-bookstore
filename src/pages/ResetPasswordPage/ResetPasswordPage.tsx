@@ -12,12 +12,16 @@ import {
   Text,
   Email,
 } from "./styles";
-import { fetchResetPassword, resetError } from "store/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { useToggle } from "store/hooks/useToggle";
-import { getUserInfo } from "store/selectors/userSelectors";
-import { Input } from "components/atoms/Input/Input";
 import { ROUTE } from "routes";
+import {
+  useAppSelector,
+  getUserInfo,
+  useToggle,
+  useAppDispatch,
+  fetchResetPassword,
+  resetError,
+} from "store";
+import { Input } from "components";
 
 export type SignInFormValues = {
   email: string;

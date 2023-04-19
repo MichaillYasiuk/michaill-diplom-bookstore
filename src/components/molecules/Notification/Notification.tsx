@@ -1,6 +1,6 @@
 import { Portal } from "components";
-import { PortalAnswer } from "../Portal/Portal";
 import { StyledNotification, Message } from "./styles";
+import { PortalAnswer } from "../Portal/Portal";
 
 interface Props {
   value: string;

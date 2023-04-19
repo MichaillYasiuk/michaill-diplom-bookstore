@@ -4,10 +4,8 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
 import { ButtonForm, InputError, StyledSignUpForm, Error } from "./styles";
-import { Input } from "components/atoms/Input/Input";
-import { fetchSignUpUser, resetError } from "store/feautures/userSlice";
-import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
-import { getUserInfo } from "store/selectors/userSelectors";
+import { Input } from "components";
+import { useAppSelector, getUserInfo, useAppDispatch, fetchSignUpUser, resetError } from "store";
 
 export type SignUpFormValues = {
   email: string;

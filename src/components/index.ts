@@ -12,16 +12,32 @@ import { Error } from "./atoms/Error/Error";
 import { Registration } from "./organisms/Registration/Registration";
 import { RegistrationLink } from "./molecules/RegistrationLink/RegistrationLink";
 import { Input } from "./atoms/Input/Input";
+import { Notification } from "./molecules/Notification/Notification";
 import { SignInForm } from "./molecules/SignInForm/SignInForm";
 import { SignUpForm } from "./molecules/SignUpForm/SignUpForm";
-import { DetailsBook } from "./organisms/DetailBook/DetailsBook";
+import { DetailsBook } from "./organisms/DetailsBook/DetailsBook";
 import { SecondaryTitle } from "./atoms/SecondaryTitle/SecondaryTitle";
 import { Subscription } from "./molecules/Subscription/Subscription";
 import { Portal } from "./molecules/Portal/Portal";
 import { SimilarBooks } from "./organisms/SimilarBooks/SimilarBooks";
+import { ButtonLike } from "./atoms/ButtonLike/ButtonLike";
+import { Slider } from "./atoms/Slider/Slider";
+import { TabBar } from "./atoms/TabBar/TabBar";
+import { FavoritesCard } from "./molecules/FavoritesCard/FavoritesCard";
+import { FavoritesBooks } from "./organisms/FavoritesBooks/FavoritesBooks";
+import { FreeBooks } from "./organisms/FreeBooks/FreeBooks";
+import { MainTemplate } from "./organisms/templates/MainTemplate";
 export {
   HeaderCustomLink,
+  MainTemplate,
+  FavoritesBooks,
+  FreeBooks,
   RegistrationLink,
+  FavoritesCard,
+  Notification,
+  ButtonLike,
+  Slider,
+  TabBar,
   Footer,
   Header,
   RequareAuth,

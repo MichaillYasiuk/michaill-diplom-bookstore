@@ -8,7 +8,7 @@ import {
   updateEmail,
   updatePassword,
 } from "firebase/auth";
-import { FirebaseError, FirebaseErrorCode, getFirebaseMessage } from "utils";
+import { FirebaseError, FirebaseErrorCode, getFirebaseMessage } from "../../utils/firebaseErrors";
 
 interface UserState {
   isAuth: boolean;

@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Color, Breakpoint } from "ui";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { ROUTE } from "routes";
-import { Notification } from "components/molecules/Notification/Notification";
-
+import { Button, Input, Notification, Title } from "components";
 import {
   StyledAccountPage,
   ButtonArrow,
@@ -27,14 +26,16 @@ import {
   InfoDescription,
 } from "./styles";
 import { AnimatePresence } from "framer-motion";
-import { fetchUpdateEmailAndPassword, fetchSignOut, resetError } from "store/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { useToggle } from "store/hooks/useToggle";
-import { getUserInfo } from "store/selectors/userSelectors";
-import { useWindowSize } from "store/hooks/useWindowSize";
-import { Input } from "components/atoms/Input/Input";
-import { Title } from "components/atoms/Title/Title";
-import { Button } from "components/atoms/Button/Button";
+import {
+  fetchSignOut,
+  fetchUpdateEmailAndPassword,
+  getUserInfo,
+  resetError,
+  useAppDispatch,
+  useAppSelector,
+  useToggle,
+  useWindowSize,
+} from "store";
 
 export type UpdateFormValues = {
   newEmail: string;

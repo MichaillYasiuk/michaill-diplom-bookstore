@@ -1,9 +1,8 @@
-import { getFirebaseMessage } from "./firebaseErrors";
-import { FirebaseError } from "./firebaseErrors";
-import { FirebaseErrorCode } from "./firebaseErrors";
+import { FirebaseError } from "firebase/app";
+import { getFirebaseMessage, FirebaseErrorCode } from "./firebaseErrors";
+import { getFreeBooks } from "./freeBooks";
 import { getSemanticWord } from "./semanticWord";
 
 
-
-export { getFirebaseMessage, FirebaseError, getSemanticWord};
+export { getFirebaseMessage, FirebaseError, getFreeBooks,getSemanticWord};
 export type { FirebaseErrorCode };

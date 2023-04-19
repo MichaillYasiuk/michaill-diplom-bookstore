@@ -1,14 +1,9 @@
-import { Title } from "components/atoms/Title/Title";
-import { BookCard } from "components/molecules/BookCard/BookCard";
-import { Subscription } from "components/molecules/Subscription/Subscription";
+import { Title, BookCard, Subscription, Error } from "components";
 import { CSSProperties, useEffect } from "react";
 import Spinner from "react-spinners/ClipLoader";
-import { fetchBooks } from "store/feautures/newBooksSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { getBooks } from "store/selectors/bookSelectors";
-import { Color } from "ui/colors";
-import { Error } from "../../components/atoms/Error/Error";
-import { StyledMainPage, StyledBooksContainer, StyledError } from "./styles";
+import { useAppDispatch, useAppSelector, getBooks, fetchBooks } from "store";
+import { Color } from "ui";
+import { StyledMainPage, StyledError, StyledBooksContainer } from "./styles";
 
 const override: CSSProperties = {
   margin: "200px auto",

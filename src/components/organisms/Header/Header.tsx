@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
 import {
   changeTheme,
+  getCartBooks,
   getFavoritesBooks,
   getUserInfo,
   useAppDispatch,
@@ -27,6 +28,7 @@ import { AnimatePresence } from "framer-motion";
 import { BurgerMenu, HeaderCustomLink, SearchHeader } from "components";
 import {
   BurgerIcon,
+  CartActiveIcon,
   CartIcon,
   FavoritesActiveIcon,
   FavoritesIcon,
@@ -41,6 +43,7 @@ export const Header = () => {
   const { theme } = useAppSelector(getUserInfo);
   const [isDark, toggleIsInstallDark] = useToggle();
   const [isOpen, toggleIsOpen] = useToggle();
+  const { cartBooks } = useAppSelector(getCartBooks);
   const { favoritesBooks } = useAppSelector(getFavoritesBooks);
   const setAttributeTheme = (themeValue: "light" | "dark") => {
     document.documentElement.setAttribute("theme", `${themeValue}`);
@@ -97,7 +100,11 @@ export const Header = () => {
             <Item key="2">
               <HeaderCustomLink to={ROUTE.CART}>
                 <CartButton whileHover={{ scale: 1.1 }}>
-                  <CartIcon width="26" stroke={Color.PRIMARY} />
+                  {cartBooks.length > 0 ? (
+                    <CartActiveIcon width="24" stroke={Color.PRIMARY} />
+                  ) : (
+                    <CartIcon width="24" stroke={Color.PRIMARY} />
+                  )}
                 </CartButton>
               </HeaderCustomLink>
             </Item>

@@ -23,12 +23,12 @@ const ButtonArrow = styled(motion.button)`
 const FavoritesWrapper = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 48px;
-  margin-top: 48px;
+  grid-gap: 45px;
+  margin-top: 45px;
 
   ${Media.MD} {
-    grid-gap: 36px;
-    margin-top: 36px;
+    grid-gap: 35px;
+    margin-top: 35px;
   }
 `;
 

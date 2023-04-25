@@ -4,7 +4,7 @@ import { Color, Media, H3 } from "ui";
 
 const Search = styled(motion.div)`
   justify-self: center;
-  padding: 12px 16px;
+  padding: 4px 16px 4px 12px;
   border: 1px solid ${Color.SECONDARY};
   min-width: 500px;
   display: flex;
@@ -42,6 +42,7 @@ const SearchInput = styled.input`
 
 const SearchButton = styled(motion.button)`
   display: flex;
+  padding: 10px 10px;
   align-content: center;
   background: none;
   border: none;

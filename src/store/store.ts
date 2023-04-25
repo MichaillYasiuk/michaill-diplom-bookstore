@@ -13,6 +13,7 @@ import storage from "redux-persist/es/storage";
 import {
   userReducer,
   booksReducer,
+  cartReducer,
   searchReducer,
   bookDetailsReducer,
   bookFavoritesReducer,
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   search: searchReducer,
   bookDetails: bookDetailsReducer,
   booksFavorites: bookFavoritesReducer,
+  cart: cartReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

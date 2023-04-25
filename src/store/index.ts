@@ -1,4 +1,11 @@
 import { fetchBookByDetails } from "./feautures/bookDetailsSlice";
+import {
+  addToCart,
+  removeFromCart,
+  addQuantity,
+  deleteQuantity,
+  calcTotal,
+} from "./feautures/cartSlice";
 import { addToFavotires, removeFavorite } from "./feautures/favoritesSlice";
 import { fetchBooks } from "./feautures/newBooksSlice";
 import {
@@ -15,35 +22,36 @@ import {
   resetError,
   fetchUpdateEmailAndPassword,
 } from "./feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import { getDetailsBook } from "./selectors/bookDetailsSelectors";
-import { getBooks } from "./selectors/bookSelectors";
-import { getFavoritesBooks } from "./selectors/favoritesSelectors";
-import { getBooksBySearch } from "./selectors/searchSelectors";
-import { getUserInfo } from "./selectors/userSelectors";
-import { persistor, store } from "./store";
-import userReducer from "./feautures/userSlice";
-import booksReducer from "./feautures/newBooksSlice";
-import bookDetailsReducer from "./feautures/bookDetailsSlice";
-import bookFavoritesReducer from "./feautures/favoritesSlice";
-import searchReducer from "./feautures/searchSlice";
 import { useToggle } from "./hooks/useToggle";
 import { useWindowSize } from "./hooks/useWindowSize";
 import { useDebounce } from "./hooks/useDebounce";
 import { useInput } from "./hooks/useInput";
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
+import { getDetailsBook } from "./selectors/bookDetailsSelectors";
+import { getBooks } from "./selectors/bookSelectors";
+import { getCartBooks } from "./selectors/cartSelectors";
+import { getFavoritesBooks } from "./selectors/favoritesSelectors";
+import { getBooksBySearch } from "./selectors/searchSelectors";
+import { getUserInfo } from "./selectors/userSelectors";
+import { store, persistor } from "./store";
+import userReducer from "./feautures/userSlice";
+import booksReducer from "./feautures/newBooksSlice";
+import bookDetailsReducer from "./feautures/bookDetailsSlice";
+import bookFavoritesReducer from "./feautures/favoritesSlice";
+import cartReducer from "./feautures/cartSlice";
+import searchReducer from "./feautures/searchSlice";
 
-export {};
 export {
   changeTheme,
+  useToggle,
+  useWindowSize,
   useAppDispatch,
+  useInput,
+  useDebounce,
   useAppSelector,
   store,
   userReducer,
   booksReducer,
-  useToggle,
-  useWindowSize,
-  useDebounce,
-  useInput,
   fetchBooks,
   getBooks,
   fetchSignUpUser,
@@ -57,6 +65,13 @@ export {
   addToFavotires,
   removeFavorite,
   fetchSignOut,
+  cartReducer,
+  getCartBooks,
+  addToCart,
+  removeFromCart,
+  addQuantity,
+  deleteQuantity,
+  calcTotal,
   fetchResetPassword,
   resetError,
   fetchUpdateEmailAndPassword,

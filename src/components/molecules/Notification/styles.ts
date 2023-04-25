@@ -4,7 +4,7 @@ import { Color, H3, Media } from "ui";
 
 const StyledNotification = styled(motion.div)`
   position: fixed;
-  top: 30%;
+  top: 18%;
   right: 0;
   z-index: 2;
   display: flex;
@@ -13,7 +13,7 @@ const StyledNotification = styled(motion.div)`
   height: 15%;
   width: 30%;
   padding: 5px;
-  background: ${Color.GREEN};
+  background: ${Color.BLUE};
 
   ${Media.LG} {
     width: 40%;

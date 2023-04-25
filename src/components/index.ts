@@ -8,6 +8,7 @@ import { BurgerMenu } from "./molecules/BurgerMenu/BurgerMenu";
 import { SearchHeader } from "./molecules/SearchHeader/SearchHeader";
 import { Title } from "./atoms/Title/Title";
 import { BookCard } from "./molecules/BookCard/BookCard";
+import { CartCard } from "./molecules/CartCard/CartCard";
 import { Error } from "./atoms/Error/Error";
 import { Registration } from "./organisms/Registration/Registration";
 import { RegistrationLink } from "./molecules/RegistrationLink/RegistrationLink";
@@ -30,6 +31,7 @@ import { MainTemplate } from "./organisms/templates/MainTemplate";
 export {
   HeaderCustomLink,
   MainTemplate,
+  CartCard,
   FavoritesBooks,
   FreeBooks,
   RegistrationLink,

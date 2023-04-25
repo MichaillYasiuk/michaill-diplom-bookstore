@@ -26,6 +26,7 @@ import {
   DescriptionBar,
 } from "./styles";
 import {
+  addToCart,
   addToFavotires,
   getUserInfo,
   useAppDispatch,
@@ -80,6 +81,7 @@ export const DetailsBook = ({ bookDetails }: DetailsProps) => {
   const handleAddToCart = (e: MouseEvent<HTMLElement>): void => {
     if (isAuth) {
       e.preventDefault();
+      dispatch(addToCart({ ...bookDetails, quantity: 0 }));
       toggleIsOpenNotification();
     }
   };

@@ -9,7 +9,7 @@ import {
   REGISTER,
   persistStore,
 } from "redux-persist";
-import storage from "redux-persist/es/storage";
+import storage from "redux-persist/lib/storage";
 import {
   userReducer,
   booksReducer,
@@ -22,7 +22,7 @@ import {
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites"],
+  whitelist: ["user", "cart", "booksFavorites"],
 };
 
 const rootReducer = combineReducers({

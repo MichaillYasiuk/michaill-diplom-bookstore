@@ -1,4 +1,4 @@
-export interface Book {
+interface Book {
   title: string;
   subtitle: string;
   isbn13: string;
@@ -7,19 +7,19 @@ export interface Book {
   url: string;
 }
 
-export interface BookResponse {
+interface BookResponse {
   error: string;
   total: string;
   books: Book[];
 }
 
-export interface BookResponseBySearch {
+interface BookResponseBySearch {
   total: string;
   page: string;
   books: Book[];
 }
 
-export interface BookDetails {
+interface BookDetails {
   error: string;
   title: string;
   subtitle: string;
@@ -37,7 +37,7 @@ export interface BookDetails {
   pdf?: BookPDF;
 }
 
-export interface BookCart {
+interface BookCart {
   error: string;
   title: string;
   subtitle: string;
@@ -55,11 +55,13 @@ export interface BookCart {
   pdf?: BookPDF;
   quantity: number;
 }
-export interface BookPDF {
+interface BookPDF {
   [format: string]: string;
 }
 
-export interface SearchValue {
+interface SearchValue {
   query: string;
   page: number;
 }
+
+export type {Book, SearchValue,BookPDF, BookCart, BookDetails,BookResponseBySearch,BookResponse  }

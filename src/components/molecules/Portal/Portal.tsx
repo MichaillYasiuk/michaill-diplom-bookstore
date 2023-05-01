@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 export enum PortalAnswer {
   ROOT = "root",
   REWIEWS = "reviews",
-  NOTIFICATION = "reviews",
 }
 
 interface PortalProps {

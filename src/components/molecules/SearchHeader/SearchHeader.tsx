@@ -1,7 +1,7 @@
 import Spinner from "react-spinners/ClipLoader";
 import { useEffect, useState, CSSProperties } from "react";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
-import { SearchIcon } from "assets";
+import { NothingIcon, SearchIcon } from "assets";
 import { ROUTE } from "routes";
 import { Breakpoint, Color } from "ui";
 import {
@@ -14,9 +14,9 @@ import {
   Image,
   Title,
   SearchListWrapper,
-  Message,
   SearchError,
   StyledError,
+  Message,
 } from "./styles";
 import { Error } from "components";
 import { AnimatePresence } from "framer-motion";
@@ -30,6 +30,11 @@ import {
   useInput,
   useWindowSize,
 } from "store";
+
+const searchCardVariants = {
+  visible: (index: number) => ({ opacity: 1, scale: 1, transition: { delay: index * 0.1 } }),
+  hidden: { opacity: 0, scale: 1.2 },
+};
 
 interface SearchHeaderProps {
   handleBurger?: () => void;
@@ -82,7 +87,7 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
   }, [currentPageMain, currentPageSearch, setValue]);
 
   const handleSearchPage = () => {
-    !currentPageFavorites && !currentPageCart && navigate(`${ROUTE.SEARCH}gh`);
+    !currentPageFavorites && !currentPageCart && navigate(`${ROUTE.SEARCH}1`);
   };
 
   return (
@@ -96,7 +101,7 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
       <AnimatePresence>
         {isOpen && (
           <SearchListWrapper
-            animate={{ height: "35vh" }}
+            animate={{ height: "50vh" }}
             initial={{ height: "0" }}
             exit={{ height: "0" }}
             transition={{ duration: 0.4 }}
@@ -114,7 +119,13 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
                 {booksBySearch.map((book, index) => {
                   return (
                     <Link to={`${ROUTE.DETAILS}${book.isbn13}`} key={book.isbn13}>
-                      <SearchCard whileTap={{ scale: 1.1 }} initial="hidden" custom={index}>
+                      <SearchCard
+                        whileTap={{ scale: 1.1 }}
+                        variants={searchCardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        custom={index}
+                      >
                         <WrapperImage>
                           <Image src={book.image} alt={book.title} />
                         </WrapperImage>
@@ -130,6 +141,7 @@ export const SearchHeader = ({ handleBurger }: SearchHeaderProps) => {
               <>
                 <Message>
                   No results found for <SearchError>{debounceSearchValue}</SearchError>
+                  <NothingIcon width="50" height="60" fill={Color.SECONDARY} />
                 </Message>
               </>
             )}

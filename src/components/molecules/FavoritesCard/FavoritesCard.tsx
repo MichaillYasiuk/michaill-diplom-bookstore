@@ -25,7 +25,7 @@ const favoritesCardVariants = {
     x: "0",
     transition: { delay: index * 0.1, duration: 0.75 },
   }),
-  hidden: { opacity: 0, x: "+100%" },
+  hidden: { opacity: 0, x: "+70%" },
 };
 
 interface FavoritesProps {

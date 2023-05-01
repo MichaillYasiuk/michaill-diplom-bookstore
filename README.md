@@ -1,1 +1,0 @@
-# michaill-diplom-bookstore

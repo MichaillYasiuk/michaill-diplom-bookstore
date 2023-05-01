@@ -3,16 +3,17 @@ import { Color } from "ui/colors";
 import { Media } from "ui/media";
 
 const WrapperFooter = styled.div`
+  z-index: 2;
   background: ${Color.LIGHT};
   position: sticky;
   bottom: 0;
-
   ${Media.LG} {
     position: static;
   }
 `;
 
 const StyledFooter = styled.footer`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;

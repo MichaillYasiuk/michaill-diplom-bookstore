@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FavoritesCard, Title } from "components";
 import { Color, Breakpoint } from "ui";
-import { ArrowLeft } from "assets";
+import { ArrowLeftIcon } from "assets";
 import { BookDetails } from "types/types";
 import { FavoritesWrapper, ButtonArrow, StyledFavoritesBooks, Message } from "./styles";
 import {
@@ -43,7 +43,7 @@ export const FavoritesBooks = () => {
   return (
     <StyledFavoritesBooks>
       <ButtonArrow onClick={handlePage} whileHover={{ scale: 1.2 }}>
-        <ArrowLeft
+        <ArrowLeftIcon
           width={width < Breakpoint.MD ? "30" : "40"}
           fill={Color.PRIMARY}
           stroke={Color.PRIMARY}

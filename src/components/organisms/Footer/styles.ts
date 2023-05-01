@@ -20,13 +20,9 @@ const StyledFooter = styled.footer`
   position: sticky;
   bottom: 0;
 
-  ${Media.LG} {
-    position: sticky;
-  }
-
   ${Media.MD} {
+    padding-block: 25px;
     flex-direction: column;
-    position: sticky;
   }
 `;
 

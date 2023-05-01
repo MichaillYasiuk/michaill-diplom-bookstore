@@ -1,6 +1,6 @@
 import Spinner from "react-spinners/ClipLoader";
 import { useEffect } from "react";
-import { ArrowLeft } from "assets";
+import { ArrowLeftIcon } from "assets";
 import { useNavigate } from "react-router-dom";
 import { Color, Breakpoint } from "ui";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
@@ -91,7 +91,7 @@ export const AccountPage = () => {
   return (
     <StyledAccountPage>
       <ButtonArrow onClick={handlePage} whileHover={{ scale: 1.2 }}>
-        <ArrowLeft
+        <ArrowLeftIcon
           width={width < Breakpoint.MD ? "30" : "40"}
           fill={Color.PRIMARY}
           stroke={Color.PRIMARY}

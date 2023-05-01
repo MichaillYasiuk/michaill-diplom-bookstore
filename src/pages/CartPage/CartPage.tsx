@@ -1,4 +1,4 @@
-import { ArrowLeft } from "assets";
+import { ArrowLeftIcon } from "assets";
 import { Title, CartCard, Button, Notification } from "components";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -71,7 +71,7 @@ export const CartPage = () => {
     <StyledCartPage>
       <CartWrapper>
         <ButtonArrow onClick={handlePage} whileHover={{ scale: 1.2 }}>
-          <ArrowLeft
+          <ArrowLeftIcon
             width={width < Breakpoint.MD ? "30" : "40"}
             fill={Color.PRIMARY}
             stroke={Color.PRIMARY}

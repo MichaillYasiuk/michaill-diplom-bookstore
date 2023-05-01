@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { Form } from "react-router-dom";
-import { StyledSubscription, ButtonForm, Input, Text } from "./styles";
+import { AnimatePresence } from "framer-motion";
+import { SecondaryTitle, Notification } from "components";
+import { ButtonForm, Form, StyledSubscription, Text, Input } from "./styles";
 import { useToggle } from "store";
-import { SecondaryTitle } from "components";
 
 export const Subscription = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -21,9 +21,18 @@ export const Subscription = () => {
 
       <Form action="#" onSubmit={handleSubmit(onSubmit)}>
         <Input type="text" placeholder="Your email" {...register("name")} />
-        <ButtonForm type="submit">Subscribe</ButtonForm>
+        <ButtonForm type="submit" whileTap={{ scale: 1.05 }}>
+          Subscribe
+        </ButtonForm>
       </Form>
-      {isOpenNotification && <p>error</p>}
+      <AnimatePresence>
+        {isOpenNotification && (
+          <Notification
+            value="Subscription is issued!"
+            toggleIsOpenNotification={toggleIsOpenNotification}
+          />
+        )}
+      </AnimatePresence>
     </StyledSubscription>
   );
 };

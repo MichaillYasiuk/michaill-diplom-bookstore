@@ -9,15 +9,15 @@ import { ReactComponent as UserIcon } from "./icons/user.svg";
 import { ReactComponent as SearchIcon } from "./icons/search.svg";
 import { ReactComponent as BurgerIcon } from "./icons/burger-icon.svg";
 import { ReactComponent as CloseIcon } from "./icons/close.svg";
-import { ReactComponent as ArrowLeft } from "./icons/arrow-left.svg";
+import { ReactComponent as ArrowLeftIcon } from "./icons/arrow-left.svg";
 import { ReactComponent as LikeIcon } from "./icons/likeIcon.svg";
 import { ReactComponent as ChevronBottomIcon } from "./icons/chevron-bottom.svg";
 import { ReactComponent as ChevronTopIcon } from "./icons/chevron-top.svg";
 import { ReactComponent as MinusIcon } from "./icons/minus.svg";
 import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 import { ReactComponent as NothingIcon } from "./icons/nothing.svg";
-import { ReactComponent as ArrowLeftPagination } from "./icons/arrow-left-pagination.svg";
-import { ReactComponent as ArrowRightPagination } from "./icons/arrow-right-pagination.svg";
+import { ReactComponent as ArrowLeftPaginationIcon } from "./icons/arrow-left-pagination.svg";
+import { ReactComponent as ArrowRightPaginationIcon } from "./icons/arrow-right-pagination.svg";
 
 export {
   LogoIcon,
@@ -29,7 +29,7 @@ export {
   SearchIcon,
   BurgerIcon,
   CloseIcon,
-  ArrowLeft,
+  ArrowLeftIcon,
   LikeIcon,
   ChevronBottomIcon,
   ChevronTopIcon,
@@ -38,6 +38,6 @@ export {
   CartActiveIcon,
   FavoritesActiveIcon,
   NothingIcon,
-  ArrowLeftPagination,
-  ArrowRightPagination,
+  ArrowLeftPaginationIcon,
+  ArrowRightPaginationIcon,
 };

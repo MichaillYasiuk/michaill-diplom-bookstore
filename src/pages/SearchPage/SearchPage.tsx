@@ -25,7 +25,7 @@ import {
 } from "./styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTE } from "routes";
-import { ArrowLeftPagination, ArrowRightPagination, NothingIcon } from "assets";
+import { ArrowLeftPaginationIcon, ArrowRightPaginationIcon, NothingIcon } from "assets";
 
 const override: CSSProperties = {
   margin: "200px auto",
@@ -98,7 +98,7 @@ export const SearchPage = () => {
             onClick={handlePrevPage}
             disabled={currentPage && currentPage ? +currentPage === 1 : false}
           >
-            <ArrowLeftPagination width={"25"} fill={Color.PRIMARY} /> Prev
+            <ArrowLeftPaginationIcon width={"25"} fill={Color.PRIMARY} /> Prev
           </ButtonArrow>
 
           {countPages > 3 && +currentPage <= 3 && width > Breakpoint.MD && (
@@ -219,7 +219,7 @@ export const SearchPage = () => {
             disabled={countPages ? +currentPage === countPages : false}
           >
             Next
-            <ArrowRightPagination width={"25"} fill={Color.PRIMARY} />
+            <ArrowRightPaginationIcon width={"25"} fill={Color.PRIMARY} />
           </ButtonArrow>
         </Pagination>
       ) : (

@@ -1,11 +1,11 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, S1 } from "ui";
 
 const StyledSubscription = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: 56px 64px;
-  height: 288px;
-  width: 1120px;
   background: ${Color.PURPLE};
 
   ${Media.LG} {
@@ -18,14 +18,21 @@ const StyledSubscription = styled.div`
 `;
 
 const Text = styled.p`
+  margin-bottom: 32px;
+  line-height: 28px;
   color: ${Color.SECONDARY};
 
   ${Media.MD} {
+    margin-bottom: 24px;
   }
 `;
 
 const Form = styled.form`
+  display: flex;
+  justify-content: space-between;
+
   ${Media.MD} {
+    flex-direction: column;
   }
 `;
 
@@ -36,6 +43,13 @@ const Input = styled.input`
   outline: none;
   color: ${Color.SECONDARY};
   background: ${Color.WHITE};
+  &&::-webkit-outer-spin-button,
+  &&::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
 
   ${Media.LG} {
     width: 70%;
@@ -46,7 +60,7 @@ const Input = styled.input`
   }
 `;
 
-const ButtonForm = styled.button`
+const ButtonForm = styled(motion.button)`
   width: 25%;
   color: ${Color.WHITE};
   background: ${Color.PRIMARY};
@@ -70,6 +84,7 @@ const ButtonForm = styled.button`
 
   ${Media.MD} {
     width: 100%;
+    margin-top: 24px;
   }
 `;
 

@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { BookDetails } from "types/types";
 import { Breakpoint, Color } from "ui";
 import { Button, ButtonLike, Notification, TabBar, Title } from "components";
-import { ArrowLeft, ChevronBottomIcon, ChevronTopIcon } from "assets";
+import { ArrowLeftIcon, ChevronBottomIcon, ChevronTopIcon } from "assets";
 import {
   StyledDetailsBook,
   ButtonArrow,
@@ -89,7 +89,7 @@ export const DetailsBook = ({ bookDetails }: DetailsProps) => {
   return (
     <StyledDetailsBook>
       <ButtonArrow onClick={handlePage}>
-        <ArrowLeft
+        <ArrowLeftIcon
           width={width < Breakpoint.MD ? "30" : "40"}
           fill={Color.PRIMARY}
           stroke={Color.PRIMARY}

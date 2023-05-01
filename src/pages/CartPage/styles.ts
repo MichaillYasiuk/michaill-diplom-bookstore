@@ -4,6 +4,7 @@ import { BODY2, Color, H2, H3, Media } from "ui";
 
 const StyledCartPage = styled.div`
   display: grid;
+  margin: -40 auto;
   margin-block: 72px;
   ${Media.MD} {
     margin-block: 56px;

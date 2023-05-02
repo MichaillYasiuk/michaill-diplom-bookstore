@@ -1,3 +1,9 @@
+import { StyledNotFoundPage, Title } from "./styles";
+
 export const NotFoundPage = () => {
-  return <div>NotFoundPage</div>;
+  return (
+    <StyledNotFoundPage>
+      <Title> There is no such page.</Title>
+    </StyledNotFoundPage>
+  );
 };

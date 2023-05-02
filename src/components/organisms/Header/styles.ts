@@ -31,12 +31,14 @@ const ButtonLogo = styled(motion.button)`
   cursor: pointer;
 `;
 
-const ButtonTheme = styled(motion.button)`
+const ButtonTheme = styled.button`
   padding: 12px;
   background: none;
   border: none;
   cursor: pointer;
-
+  :hover {
+    transform: scale(1.2);
+  }
   ${Media.LG} {
     margin-left: auto;
   }
@@ -63,33 +65,41 @@ const Item = styled.li`
   align-self: center;
 `;
 
-const FavoritesButton = styled(motion.button)`
+const FavoritesButton = styled.button`
   padding: 12px;
   background: none;
   border: none;
   cursor: pointer;
-
+  :hover {
+    transform: scale(1.2);
+  }
   ${Media.LG} {
     display: none;
   }
 `;
 
-const CartButton = styled(motion.button)`
+const CartButton = styled.button`
   padding: 12px;
   background: none;
   border: none;
   cursor: pointer;
+  :hover {
+    transform: scale(1.2);
+  }
   ${Media.LG} {
     display: none;
   }
 `;
 
-const UserButton = styled(motion.button)`
+const UserButton = styled.button`
   padding: 12px;
   background: none;
   border: none;
   cursor: pointer;
 
+  :hover {
+    transform: scale(1.2);
+  }
   ${Media.LG} {
     display: none;
   }
@@ -104,6 +114,7 @@ const ButtonBurger = styled(motion.button)`
 
   :hover {
     box-shadow: 1px 1px 15px ${Color.GRAY};
+    transform: scale(1.2);
   }
 
   ${Media.LG} {

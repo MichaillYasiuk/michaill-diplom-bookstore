@@ -27,7 +27,7 @@ export const router = createBrowserRouter(
       </Route>
 
       <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />} />
-      <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />
+      <Route path={ROUTE.MAIN} element={<NotFoundPage />} />
 
       <Route element={<RequareAuth />}>
         <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />

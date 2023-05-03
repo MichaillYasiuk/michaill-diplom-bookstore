@@ -45,26 +45,6 @@ A web application, which provides you with possibility to search through a vast 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-- [![React][react.js]][react-url]
-- [![Firebase][firebase.google.com]][firebase-url]
-- [![Redux Persist][github.com/rt2zz/redux-persist]][persist-url]
-- [![react-rating-stars-component][react-rating-stars-component.com]][react-rating-stars-component-url]
-- [![keen-slider][keen-slider.com]][keen-slider-url]
-- [![react-spinners][react-spinners.com]][react-spinners-url]
-- [![styled-components][styled-components]][styled-components-url]
-- [![React Router][reactrouter.com]][react-router-url]
-- [![React Hook Form][react-hook-form.com]][react-hook-form-url]
-- [![React Select][react-select.com]][react-select-url]
-- [![Redux Toolkit][redux-toolkit.js.org]][redux-url]
-- [![Framer Motion][framer.com]][framer-url]
-- [![Axios][axios-http.com]][axios-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Getting Started
 
 ### Prerequisites

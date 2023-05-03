@@ -2,7 +2,7 @@
   "name": "bookstore",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://michaillyasiuk.github.io/michaill-diplom-bookstore/",
+  "homepage": "https://michaillyasiuk.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",

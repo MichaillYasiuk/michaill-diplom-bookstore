@@ -87,7 +87,7 @@ export const CartPage = () => {
             })
           ) : (
             <Message>
-              {debounceSearchValue ? "No results found. 😔" : "Your shopping cart is empty. 😔"}
+              {debounceSearchValue ? "No results found" : "Your shopping cart is empty"}
             </Message>
           )}
         </CartContainer>

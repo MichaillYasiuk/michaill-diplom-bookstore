@@ -71,11 +71,11 @@ Go to the homepage of the site and you will see the first 20 books provided by t
 
 <img src="images/main-page.jpg" alt="Home Page" >
 
-On the Home page you can use a quick search.
+On the Home page you can use a search form to quick search.
 
 <img src="images/search-form.jpg" alt="Search Page" >
 
-Upon clicking on the loupe you will be navigated to the Search page displaying current books search.
+Upon clicking on the loupe you will be navigated to the Search page.
 
 <img src="images/search-page.jpg" alt="Search Page" >
 
